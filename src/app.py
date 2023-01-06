@@ -1,5 +1,5 @@
-from connector import connector_manager
+from connector import *
 
 
 def run():
-    connector_manager()
+    print(db.name)
