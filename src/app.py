@@ -1,5 +1,9 @@
-from connector import *
+from connector import lab_client, coll
+from retriver import selector
 
 
 def run():
-    print(db.name)
+    selector_result = selector(coll)
+    for _ in selector_result:
+        print(_)
+    lab_client.close()

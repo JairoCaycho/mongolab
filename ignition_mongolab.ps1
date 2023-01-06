@@ -74,4 +74,5 @@ else {
         ignition_branch $WorkingEnvironment
     }
     proper_venv $WorkingEnvironment
+    checkpoint_confirmation $ExecutionGroup
 }

@@ -12,7 +12,6 @@ DATABASE = os.environ.get('DATABASE')
 
 lab_client = MongoClient(LAB_URI)
 
-# db = lab_client.get_database(name='DATABASE')
+db = lab_client.get_database(name=DATABASE)
 
-db = lab_client.sample_guides
-print(db.name)
+coll = db.get_collection(name='planets')
