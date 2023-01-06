@@ -11,7 +11,9 @@ CLUSTER_URL = os.environ.get('CLUSTER_URL')
 
 def connection_string():
     lab_uri = f'mongodb+srv://{MONGO_USER}:{MONGO_USER_PASS}@{CLUSTER_URL}?authMechanism=DEFAULT'
-    print(lab_uri)
+    return lab_uri
+
 
 def connector_manager():
-    connection_string()
+    connection_uri = connection_string()
+    lab_client = MongoClient(connection_uri)
