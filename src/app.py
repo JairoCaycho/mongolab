@@ -1,7 +1,7 @@
 from connector import lab_client, collection_planets, collection_comets
 from retriver import selector
 from inserter import writer
-from modifier import updater
+from modifier import updater, eraser
 
 
 def run():
@@ -12,4 +12,6 @@ def run():
     print(writer_result.inserted_ids)
     updater_result = updater(collection_comets)
     print(updater_result.modified_count)
+    eraser_result = eraser(collection_comets)
+    print(eraser_result.deleted_count)
     lab_client.close()
